@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Quiz Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-orange-50 via-white to-purple-50 flex items-center justify-center p-4 font-sans text-slate-800">
+
+<div class="w-full max-w-md">
+
+    <!-- START SCREEN-->
+    <div id="start-screen" class="bg-white rounded-2xl shadow-xl shadow-orange-200/50 border border-orange-100 p-8 text-center">
+        <h1 class="text-3xl font-bold text-slate-900 mb-2">Quiz Time</h1>
+
+        <p class="text-slate-500 mb-6">Test your knowledge with these fun questions.</p>
+
+        <button id="start-btn"
+                class="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-orange-300/50 transition-colors">
+            Start Quiz
+        </button>
+    </div>
+
+    <!----------------------------------------------------------------------------------->
+
+    <!-- QUIZ SCREEN-->
+    <div id="quiz-screen" class="hidden bg-white rounded-2xl shadow-xl shadow-orange-200/50 border border-orange-100 p-8">
+
+        <div class="mb-6"> <!-- quiz header -->
+            <h2 id="question-text" class="text-xl font-semibold text-slate-900 mb-4">QUESTION GOES HERE</h2>
+
+            <div id="quiz-info" class="flex justify-between text-sm text-slate-500">
+                <p>
+                    Question <span id="current-question" class="font-medium text-purple-600">1</span> of <span id="">5</span>
+                </p>
+
+                <p>Score: <span id="score" class="font-medium text-orange-600">0</span></p>
+            </div>
+        </div>
+
+        <div id="answers-container" class="flex flex-col gap-3">
+            <!--  Answer buttons will be inserted by JavaScript code-->
+            <!-- Example of what a JS-inserted answer button should look like:
+            <button class="w-full text-left px-4 py-3 rounded-xl border border-slate-200 hover:border-orange-400 hover:bg-orange-50 transition-colors">
+                Answer option
+            </button>
+            -->
+        </div>
+
+        <!-- progress-bar -->
+        <div id="progress-bar" class="mt-6 h-2 w-full bg-slate-100 rounded-full overflow-hidden">
+            <div id="progress" class="h-full w-1/5 bg-gradient-to-r from-orange-500 to-purple-500 rounded-full transition-all duration-300"></div>
+        </div>
+    </div>
+
+    <!--------------------------------------------------------------->
+    <!-- RESULT SCREEN -->
+    <div id="result-screen" class="hidden bg-white rounded-2xl shadow-xl shadow-orange-200/50 border border-orange-100 p-8 text-center">
+        <h1 class="text-3xl font-bold text-slate-900 mb-4">Quiz Results</h1>
+
+        <div class="mb-6">
+            <p class="text-slate-600 mb-2">You scored
+                <span id="final-score" class="font-bold text-orange-600">0</span> out of
+                <span id="max-score" class="font-bold text-purple-600">5</span>
+            </p>
+            <div id="result-message" class="text-sm text-slate-500">
+                Good Job
+            </div>
+        </div>
+
+        <button id="restart-btn"
+                class="bg-purple-600 hover:bg-purple-700 text-white font-semibold px-6 py-3 rounded-xl shadow-md shadow-purple-300/50 transition-colors">
+            Restart Quiz
+        </button>
+    </div>
+
+</div>
+
+<script src="index.js"></script>
+</body>
+</html>
