@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Number Guessing Game</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class="min-h-screen bg-gradient-to-br from-indigo-50 via-blue-50 flex items-center justify-center p-4 font-sans text-slate-800">
+    <div class="w-full max-w-md bg-white/80 flex flex-col p-8 rounded-xl shadow-lg border border-white/20">
+        <h1 class="text-3xl font-extrabold mb-4 text-gray-850 tracking-tight">Guess the number</h1>
+        <p class=" mb-6 leading-relaxed text-sm text-slate-600">I'm thinking of a number between  <span id="min-val">1</span> and <span id="max-val">10</span>. See if you can guess it in 5 turns or less. </p>
+        <p id="guess-result" class=" mb-6 empty:hidden font-medium"></p>
+        <input type="number" id="guess-input" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl mb-4 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:bg-white transition-all text-slate-800 placeholder:text-slate-400" placeholder="Enter your guess">
+
+        <button id="guess-btn" class=" w-full px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-[0.98]">Guess</button>
+
+        <button id="reload-btn" class="hidden w-full px-4 py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl shadow-md shadow-indigo-200 transition-all cursor-pointer active:scale-[0.98]">Play Again</button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
