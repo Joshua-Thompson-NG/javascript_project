@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interest Calculator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Hides number inputs' default up/down arrows for a cleaner look */
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center font-sans bg-slate-50 text-slate-800 p-4">
+
+<div class="w-full max-w-md bg-white p-8 shadow-xl rounded-2xl border border-slate-100">
+    <h1 class="font-extrabold text-3xl text-slate-900 text-center tracking-tight">
+        Compound Interest Calculator
+    </h1>
+
+    <!-- Inputs Form -->
+    <form action="" class="flex flex-col gap-5 mt-6">
+        <div class="flex flex-col gap-1.5">
+            <label for="principal" class="text-sm font-semibold text-slate-700">Principal Amount</label>
+            <div class="relative">
+                <span class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 font-medium">$</span>
+                <input type="number" id="principal" placeholder="0.00" class="w-full border border-slate-300 rounded-xl pl-8 pr-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all">
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+            <label for="rate" class="text-sm font-semibold text-slate-700">Annual Interest Rate</label>
+            <div class="relative">
+                <input type="number" id="rate" placeholder="0.00" class="w-full border border-slate-300 rounded-xl pl-4 pr-8 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all">
+                <span class="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 font-medium">%</span>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-1.5">
+            <label for="years" class="text-sm font-semibold text-slate-700">Time Period (Years)</label>
+            <input type="number" id="years" placeholder="e.g., 5" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all">
+        </div>
+
+        <button type="button" id="mainBtn" class="mt-2 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 active:scale-[0.98] text-white font-semibold rounded-xl w-full shadow-lg shadow-indigo-100 transition-all cursor-pointer">
+            Calculate Interest
+        </button>
+    </form>
+
+    <!-- 📊 Result Area -->
+    <!-- Note: Remove the 'hidden' class to see it or use JavaScript to toggle it -->
+    <div id="resultArea" class="hidden mt-6 pt-6 border-t border-dashed border-slate-200 animate-fade-in">
+        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-3">Calculation Breakdown</h3>
+
+        <div class="bg-slate-50 rounded-2xl p-4 flex flex-col gap-3">
+            <!-- Row 1: Earned Interest -->
+            <div class="flex justify-between items-center">
+                <span class="text-slate-600 text-sm font-medium">Total Interest Earned</span>
+                <span id="interestEarned" class="text-lg font-bold text-slate-900">$0.00</span>
+            </div>
+
+            <!-- Divider -->
+            <div class="border-b border-slate-200/60 w-full"></div>
+
+            <!-- Row 2: Total Balance -->
+            <div class="flex justify-between items-center">
+                <span class="text-slate-600 text-sm font-medium">Total Balance</span>
+                <span id="totalBalance" class="text-xl font-extrabold text-indigo-600">$0.00</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
