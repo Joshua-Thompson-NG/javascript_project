@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stopwatch</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+<body class=" w-full flex flex-col h-screen align-center justify-center items-center">
+
+    <div class=" bg-indigo-400 flex flex-col justify-center items-center shadow-sm  rounded-xl p-5 text-white" >
+        <h1 class="text-5xl font-bold mb-4">Stopwatch</h1>
+
+        <div>
+            <!-- display -->
+            <div class="text-center mb-4 font-semibold text-3xl font-sans leading-tight" id="display">
+                00:00:00:00
+            </div>
+
+            <!-- controls -->
+            <div class="flex items-center justify-between gap-4">
+                <button id="startBtn" class="px-7 py-2 bg-indigo-700 rounded-xl font-medium hover:bg-indigo-800">Start</button>
+                <button id="stopBtn" class="px-7 py-2 bg-amber-700 rounded-xl font-medium hover:bg-amber-800">Stop</button>
+                <button id="resetBtn" class="px-7 py-2 bg-red-700 rounded-xl font-medium hover:bg-red-800">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
